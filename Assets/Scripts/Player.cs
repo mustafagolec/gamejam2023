@@ -27,8 +27,6 @@ public class Player : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime); //ilerleme kodu
 
         transform.Translate((steerValue / 20f) * turnSpeed * Time.deltaTime, 0f, 0f); //saga sola otele
-
-
     }
 
     public void Steer(int value)
