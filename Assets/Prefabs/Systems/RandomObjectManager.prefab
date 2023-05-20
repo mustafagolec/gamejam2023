@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 6781326995042959632, guid: 9f6122801ceb4004e99336ea453e6bdb, type: 3}
   ObjectZ: 250
   StartTime: 0
-  SpawnTime: 2
+  SpawnTime: 3
 --- !u!114 &3261402041715534588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,9 +66,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectPrefabs:
   - {fileID: 7782389710101167996, guid: 816bcc3e7a02e7648b33605116ce2c58, type: 3}
-  ObjectZ: 320
+  ObjectZ: 370
   StartTime: 0
-  SpawnTime: 3.2
+  SpawnTime: 4.3
 --- !u!114 &3261402041715534587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +83,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectPrefabs:
   - {fileID: 6808122523853574715, guid: 677f201580525b141a5754633971406a, type: 3}
-  ObjectZ: 250
+  ObjectZ: 270
   StartTime: 0
   SpawnTime: 5

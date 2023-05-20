@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] public int health = 3;
     private int maxHealth = 5;
     public Slider healthSlider;
-    private int steerValue;
+    public int steerValue;
 
     private void Start()
     {

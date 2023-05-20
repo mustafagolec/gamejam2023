@@ -386,6 +386,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gumMachine: {fileID: 502501602}
+  M_CamObject: {fileID: 1234819148}
+  M_Canvas: {fileID: 52815048}
+  G_Player: {fileID: 2691325062979840550, guid: e66bd08b49adb00459a71072cd8e36c5,
+    type: 3}
+  G_UI: {fileID: 3700799847018280165, guid: 897c7f3cfaee5494488c72103f768d45, type: 3}
+  G_TileManager: {fileID: 272653678820047016, guid: 1cb85ef38ee149d45866e6c2513197d2,
+    type: 3}
+  G_ObjectManager: {fileID: 3261402041715534591, guid: d82ef40a33572b44c951d4cb66aab416,
+    type: 3}
 --- !u!1 &258127646
 GameObject:
   m_ObjectHideFlags: 0
