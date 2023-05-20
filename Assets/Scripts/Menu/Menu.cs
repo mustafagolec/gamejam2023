@@ -15,6 +15,9 @@ public class Menu : MonoBehaviour
     public GameObject G_TileManager;
     public GameObject G_ObjectManager;
 
+    public GameObject mainmenuObj;
+    public GameObject shoppingmenuObj;
+
     private void Start()
     {
         m_Animator = gumMachine.GetComponent<Animator>();
@@ -36,6 +39,18 @@ public class Menu : MonoBehaviour
     {
         m_Animator.SetBool("isStarted", true);
         Invoke("SpawnFunc",2f);
+    }
+
+    public void ShoppinMenu() //alışveriş menümüzü aktif eden kodumuz
+    {
+        mainmenuObj.SetActive(false);
+        shoppingmenuObj.SetActive(true);
+    }
+
+    public void returnButton()
+    {
+        mainmenuObj.SetActive(true);
+        shoppingmenuObj.SetActive(false);
     }
 
     void SpawnFunc()
