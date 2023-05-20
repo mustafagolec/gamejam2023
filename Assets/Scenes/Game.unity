@@ -1108,6 +1108,11 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5366236222385253588, guid: 897c7f3cfaee5494488c72103f768d45,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5374901913594308932, guid: 897c7f3cfaee5494488c72103f768d45,
         type: 3}
       propertyPath: m_AnchorMax.x
