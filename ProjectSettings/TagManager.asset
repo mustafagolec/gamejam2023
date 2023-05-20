@@ -8,6 +8,7 @@ TagManager:
   - PU_Health
   - Obstacle_Map
   - ObjectDestroyer
+  - Obstacle_Cigarette
   layers:
   - Default
   - TransparentFX

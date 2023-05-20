@@ -39,5 +39,10 @@ public class ObjectDestroyer : MonoBehaviour
         {
             Destroy(other.gameObject,destroyTime);
         }
+
+        if (other.CompareTag("Obstacle_Cigarette"))
+        {
+            Destroy(other.gameObject,destroyTime);
+        }
     }
 }

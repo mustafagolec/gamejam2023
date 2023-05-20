@@ -41,10 +41,16 @@ public class Player : MonoBehaviour
             Debug.Log("saglik:" + health);
         }
 
+        if (other.CompareTag("Obstacle_Cigarette"))
+        {
+            Destroy(other.gameObject);
+            health-=2;
+            Debug.Log("saglik:" + health);
+        }
+
         if (other.CompareTag("Obstacle_Map"))
         {
             health=0;
-            Debug.Log("saglik:" + health);
         }
 
         if (other.CompareTag("PU_Health"))
@@ -70,6 +76,10 @@ public class Player : MonoBehaviour
         if (health >= maxHealth)
         {
             health = maxHealth;
+        }
+        else if (health <= 0)
+        {
+            health = 0;
         }
         HealthSlider(health);
     }
