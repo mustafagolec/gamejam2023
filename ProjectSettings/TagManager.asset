@@ -7,6 +7,7 @@ TagManager:
   - Obstacle
   - PU_Health
   - Obstacle_Map
+  - ObjectDestroyer
   layers:
   - Default
   - TransparentFX
