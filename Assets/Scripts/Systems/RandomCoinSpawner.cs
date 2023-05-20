@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomCoinSpawner : MonoBehaviour
+public class RandomObjectSpawner : MonoBehaviour
 {
     public GameObject[] ObjectPrefabs;
     private Transform playerTransform;
