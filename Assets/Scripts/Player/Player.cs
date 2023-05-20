@@ -13,19 +13,43 @@ public class Player : MonoBehaviour
     private int maxHealth = 5;
     public Slider healthSlider;
     public int steerValue;
+    //public Animator P_Anim;
+
+
+    //sigara kodu
+    private bool isSmoking = false;     
+    private float smokingDuration = 2f;//Sigara etkisinin ne kadar süreceðini belirle
+    private float healthDecreaseInterval = 1f;//Saðlýk azalmasýnýn hangi aralýklarla gerçekleþeceðini belirler
+    private float healthDecreaseTimer = 0f;//Saðlýk azalmasýnýn süresini takip eden bir sayaçtýr
+    //
 
     private void Start()
     {
         healthSlider = GameObject.FindGameObjectWithTag("Canvas_InGame").transform.GetChild(2).GetComponent<Slider>();
         healthSlider.maxValue = health;
         scoreSc = GetComponent<Score>();
+       // P_Anim= GetComponent<Animator>();
+        
     }
 
-    void Update()
+    public void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime); //ilerleme kodu
         transform.Translate((steerValue / 20f) * turnSpeed * Time.deltaTime, 0f, 0f); //saga sola otele
         healthUpdate();
+        // P_Anim.Play("Walk");
+
+        if (isSmoking)
+        {
+            healthDecreaseTimer += Time.deltaTime;
+
+            if (healthDecreaseTimer >= healthDecreaseInterval)
+            {
+                healthDecreaseTimer = 0f;
+                health -= 1;
+                Debug.Log("saglik:" + health);
+            }
+        }
     }
 
     public void Steer(int value)
@@ -45,8 +69,10 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Obstacle_Cigarette"))
         {
             Destroy(other.gameObject);
-            health-=2;
+            health -= 2;
             Debug.Log("saglik:" + health);
+            isSmoking = true;
+            Invoke(nameof(StopSmoking), smokingDuration);
         }
 
         if (other.CompareTag("Obstacle_Map"))
@@ -89,5 +115,10 @@ public class Player : MonoBehaviour
             health = 0;
         }
         HealthSlider(health);
+    }
+
+    private void StopSmoking()
+    {
+        isSmoking = false;
     }
 }

@@ -375,6 +375,7 @@ MonoBehaviour:
   turnSpeed: 200
   health: 5
   healthSlider: {fileID: 0}
+  steerValue: 0
 --- !u!114 &919132149332575953
 MonoBehaviour:
   m_ObjectHideFlags: 0
