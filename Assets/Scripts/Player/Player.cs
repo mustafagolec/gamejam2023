@@ -55,7 +55,6 @@ public class Player : MonoBehaviour
                 scoreSc.score += 100;
             }
             Debug.Log("saglik:" + health);
-            Destroy(other.gameObject);
         }
     }
 
