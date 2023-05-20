@@ -376,6 +376,7 @@ MonoBehaviour:
   health: 5
   healthSlider: {fileID: 0}
   steerValue: 0
+  smokeParticle: {fileID: 19812248, guid: beb394936b9715549b3743727aa96c75, type: 3}
 --- !u!114 &919132149332575953
 MonoBehaviour:
   m_ObjectHideFlags: 0

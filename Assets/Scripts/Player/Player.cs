@@ -14,14 +14,17 @@ public class Player : MonoBehaviour
     public Slider healthSlider;
     public int steerValue;
     //public Animator P_Anim;
-
+    
 
     //sigara kodu
     private bool isSmoking = false;     
     private float smokingDuration = 2f;//Sigara etkisinin ne kadar süreceðini belirle
     private float healthDecreaseInterval = 1f;//Saðlýk azalmasýnýn hangi aralýklarla gerçekleþeceðini belirler
-    private float healthDecreaseTimer = 0f;//Saðlýk azalmasýnýn süresini takip eden bir sayaçtýr
-    //
+    private float healthDecreaseTimer = 0f;//Saðlýk azalmasýnýn süresini takip eden bir sayaçtýr                                       
+    
+    public ParticleSystem smokeParticle;
+    ParticleSystem temp;
+
 
     private void Start()
     {
@@ -46,7 +49,7 @@ public class Player : MonoBehaviour
             if (healthDecreaseTimer >= healthDecreaseInterval)
             {
                 healthDecreaseTimer = 0f;
-                health -= 1;
+                health --;
                 Debug.Log("saglik:" + health);
             }
         }
@@ -72,6 +75,7 @@ public class Player : MonoBehaviour
             health -= 2;
             Debug.Log("saglik:" + health);
             isSmoking = true;
+            StartSmoking();
             Invoke(nameof(StopSmoking), smokingDuration);
         }
 
@@ -117,8 +121,23 @@ public class Player : MonoBehaviour
         HealthSlider(health);
     }
 
+
+    private void StartSmoking()
+    {
+
+        isSmoking = true;
+        temp=  Instantiate(smokeParticle);
+        temp.transform.position = transform.position;
+        temp.transform.parent=transform;
+        temp.Play();
+        Invoke(nameof(StopSmoking), smokingDuration);
+        Debug.Log("Partikül efekti baþladý.");
+
+    }
     private void StopSmoking()
     {
         isSmoking = false;
+        temp.Stop();
+        Debug.Log("Partikül efekti durduruldu.");
     }
 }
