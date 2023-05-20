@@ -53,6 +53,12 @@ public class Player : MonoBehaviour
             health=0;
         }
 
+        if (other.CompareTag("Coin"))
+        {
+            scoreSc.coin++;
+            Destroy(other.gameObject);
+        }
+
         if (other.CompareTag("PU_Health"))
         {
             health++;

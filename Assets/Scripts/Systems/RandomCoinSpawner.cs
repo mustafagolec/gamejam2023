@@ -7,7 +7,7 @@ public class RandomObjectSpawner : MonoBehaviour
     public GameObject[] ObjectPrefabs;
     private Transform playerTransform;
     private int lastPrefabIndex = 0;
-    private float ObjectX;
+    private float ObjectX = 0f;
     [SerializeField] private float ObjectZ = 250f;
     [SerializeField] private float StartTime = 0f;
     [SerializeField] private float SpawnTime = 2.0f;
@@ -22,7 +22,7 @@ public class RandomObjectSpawner : MonoBehaviour
 
     void Update()
     {
-        ObjectX = Random.Range(-4f, 4f);
+        ObjectX = Random.Range(-100f, 100f);
     }
 
 

@@ -44,5 +44,10 @@ public class ObjectDestroyer : MonoBehaviour
         {
             Destroy(other.gameObject,destroyTime);
         }
+
+        if (other.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject,destroyTime);
+        }
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Obstacle_Map
   - ObjectDestroyer
   - Obstacle_Cigarette
+  - Coin
   layers:
   - Default
   - TransparentFX

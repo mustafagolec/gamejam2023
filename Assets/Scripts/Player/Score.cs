@@ -7,6 +7,8 @@ public class Score : MonoBehaviour
 {
     private Player playerSc;
     public TMP_Text scoreText;
+    public TMP_Text coinText;
+    public int coin = 0;
     public float score;
 
     private void Start()
@@ -21,5 +23,7 @@ public class Score : MonoBehaviour
             score += Time.deltaTime*21;
             scoreText.text = $"Score:{score.ToString("0")}";
         }
+        coinText.text = $"Coin : {coin}";
+        
     }
 }

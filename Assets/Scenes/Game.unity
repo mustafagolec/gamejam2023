@@ -205,10 +205,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectPrefabs:
-  - {fileID: 8344161132430532903, guid: 42cdcaa5232d2634898abcd2528750b4, type: 3}
+  - {fileID: 6808122523853574715, guid: 677f201580525b141a5754633971406a, type: 3}
   ObjectZ: 250
   StartTime: 0
-  SpawnTime: 0.1
+  SpawnTime: 5
 --- !u!1 &218898365
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +830,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1874393735 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7260519263607579760, guid: 897c7f3cfaee5494488c72103f768d45,
+    type: 3}
+  m_PrefabInstance: {fileID: 3046525209318821309}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &543450653522680949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3319805271457706140, guid: e66bd08b49adb00459a71072cd8e36c5,
@@ -855,6 +867,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 919132149332575953, guid: e66bd08b49adb00459a71072cd8e36c5,
+        type: 3}
+      propertyPath: coinText
+      value: 
+      objectReference: {fileID: 1874393735}
     - target: {fileID: 919132149332575953, guid: e66bd08b49adb00459a71072cd8e36c5,
         type: 3}
       propertyPath: scoreText
