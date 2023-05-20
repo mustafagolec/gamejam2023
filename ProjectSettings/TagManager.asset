@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - PU_Health
+  - Obstacle_Map
   layers:
   - Default
   - TransparentFX

@@ -41,6 +41,12 @@ public class Player : MonoBehaviour
             Debug.Log("saglik:" + health);
         }
 
+        if (other.CompareTag("Obstacle_Map"))
+        {
+            health=0;
+            Debug.Log("saglik:" + health);
+        }
+
         if (other.CompareTag("PU_Health"))
         {
             health++;
