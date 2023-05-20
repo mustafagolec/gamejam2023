@@ -14,6 +14,8 @@ public class Score : MonoBehaviour
     private void Start()
     {
         playerSc = GetComponent<Player>();
+        scoreText = GameObject.FindGameObjectWithTag("Canvas_InGame").transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        coinText = GameObject.FindGameObjectWithTag("Canvas_InGame").transform.GetChild(1).GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
