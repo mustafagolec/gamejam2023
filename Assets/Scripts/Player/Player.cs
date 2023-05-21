@@ -57,7 +57,8 @@ public class Player : MonoBehaviour
         scoreSc = GetComponent<Score>();
         m_Animator = GetComponent<Animator>();
         ColorChecker();
-
+        walk.Play();
+        run.Play();
     }
 
     public void Update()
@@ -145,6 +146,8 @@ public class Player : MonoBehaviour
         else if (health <= 0)
         {
             health = 0;
+            walk.Stop();
+            run.Stop();
         }
 
         if (health > 1)

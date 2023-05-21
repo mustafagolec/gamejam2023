@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 5515238910239635770, guid: 7dbb0a440d9ea0c4882c3ea55baffa79, type: 3}
   ObjectZ: 250
   StartTime: 0
-  SpawnTime: 1
+  SpawnTime: 0.5
 --- !u!114 &3261402041715534588
 MonoBehaviour:
   m_ObjectHideFlags: 0
