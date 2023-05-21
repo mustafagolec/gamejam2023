@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public const string difficultyKey = "difficulty"; //1,2,3   //PlayerPrefs.GetInt(difficultyKey) == 1
     private Score scoreSc;
     [SerializeField] public float speed = 10f;
     [SerializeField] private float turnSpeed = 150f;
@@ -29,6 +30,15 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        if(PlayerPrefs.GetInt(difficultyKey) == 1){ //BAŞLANGIÇ SEÇENEKLERİ
+            health = 3;
+        }
+        else if(PlayerPrefs.GetInt(difficultyKey) == 2){
+            health = 4;
+        }
+        else if(PlayerPrefs.GetInt(difficultyKey) == 3){
+            health = 5;
+        }
         healthSlider = GameObject.FindGameObjectWithTag("Canvas_InGame").transform.GetChild(2).GetComponent<Slider>();
         healthSlider.maxValue = health;
         scoreSc = GetComponent<Score>();

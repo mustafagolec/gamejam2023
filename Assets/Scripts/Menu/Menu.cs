@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Timeline;
 public class Menu : MonoBehaviour
 {
+    public const string difficultyKey = "difficulty"; //1,2,3   //PlayerPrefs.GetInt(difficultyKey) == 1, PlayerPrefs.SetInt(difficultyKey, 0);
     public GameObject gumMachine;
     Animator m_Animator;
 
@@ -31,20 +32,26 @@ public class Menu : MonoBehaviour
         m_Animator.SetBool("isStarted", true);
         Invoke("PlayTimeline", 2f);
         Invoke("SpawnFunc",2f);
+        PlayerPrefs.SetInt(difficultyKey, 1);
         speed.m_Speed = 1f;
-
     }
 
     public void buttonTwo()
     {
         m_Animator.SetBool("isStarted", true);
+        Invoke("PlayTimeline", 2f);
         Invoke("SpawnFunc",2f);
+        PlayerPrefs.SetInt(difficultyKey, 2);
+        speed.m_Speed = 1f;
     }
 
     public void buttonThree()
     {
         m_Animator.SetBool("isStarted", true);
+        Invoke("PlayTimeline", 2f);
         Invoke("SpawnFunc",2f);
+        PlayerPrefs.SetInt(difficultyKey, 3);
+        speed.m_Speed = 1f;
     }
 
     public void ShoppinMenu() //alışveriş menümüzü aktif eden kodumuz
