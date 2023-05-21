@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Timeline;
+using TMPro;
 public class Menu : MonoBehaviour
 {
     public const string difficultyKey = "difficulty"; //1,2,3   //PlayerPrefs.GetInt(difficultyKey) == 1, PlayerPrefs.SetInt(difficultyKey, 0);
@@ -21,6 +22,7 @@ public class Menu : MonoBehaviour
     public GameObject shoppingmenuObj;
     public TimelineAsset timelineAsset;
     public CinemachineDollyCart speed;
+    public TMP_Text coinText;
 
     private void Start()
     {
