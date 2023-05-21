@@ -7,6 +7,7 @@ using TMPro;
 public class Menu : MonoBehaviour
 {
     public const string difficultyKey = "difficulty"; //1,2,3   //PlayerPrefs.GetInt(difficultyKey) == 1, PlayerPrefs.SetInt(difficultyKey, 0);
+    public const string coinKey = "coinKey";
     public GameObject gumMachine;
     Animator m_Animator;
 
@@ -27,6 +28,7 @@ public class Menu : MonoBehaviour
     private void Start()
     {
         m_Animator = gumMachine.GetComponent<Animator>();
+        coinText.text = $"Coin : {PlayerPrefs.GetInt(coinKey)}";
     }
 
     public void buttonOne()
