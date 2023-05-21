@@ -124,20 +124,16 @@ public class Player : MonoBehaviour
 
     private void StartSmoking()
     {
-
         isSmoking = true;
-        temp=  Instantiate(smokeParticle);
+        temp = Instantiate(smokeParticle);
         temp.transform.position = transform.position;
-        temp.transform.parent=transform;
+        temp.transform.parent = transform;
         temp.Play();
         Invoke(nameof(StopSmoking), smokingDuration);
-        Debug.Log("Partik�l efekti ba�lad�.");
-
     }
     private void StopSmoking()
     {
         isSmoking = false;
         temp.Stop();
-        Debug.Log("Partik�l efekti durduruldu.");
     }
 }
