@@ -9,10 +9,14 @@ public class Menu : MonoBehaviour
     public const string difficultyKey = "difficulty"; //1,2,3   //PlayerPrefs.GetInt(difficultyKey) == 1, PlayerPrefs.SetInt(difficultyKey, 0);
     public const string coinKey = "coinKey";
     public GameObject gumMachine;
+    public GameObject coinObj25;
+    public GameObject coinObj50;
+    public GameObject coinObj100;
     Animator m_Animator;
 
     public GameObject M_CamObject;
     public GameObject M_Canvas;
+    public GameObject M_BG;
 
     public GameObject G_Player;
     public GameObject G_UI;
@@ -38,8 +42,9 @@ public class Menu : MonoBehaviour
         audioPlayer.clip = menuSounds[0];
         audioPlayer.Play();
         m_Animator.SetBool("isStarted", true);
+        coinObj25.SetActive(true);
         Invoke("PlayTimeline", 2f);
-        Invoke("SpawnFunc",2f);
+        Invoke("SpawnFunc",3f);
         PlayerPrefs.SetInt(difficultyKey, 1);
         speed.m_Speed = 1f;
     }
@@ -49,8 +54,9 @@ public class Menu : MonoBehaviour
         audioPlayer.clip = menuSounds[0];
         audioPlayer.Play();
         m_Animator.SetBool("isStarted", true);
+        coinObj50.SetActive(true);
         Invoke("PlayTimeline", 2f);
-        Invoke("SpawnFunc",2f);
+        Invoke("SpawnFunc",3f);
         PlayerPrefs.SetInt(difficultyKey, 2);
         speed.m_Speed = 1f;
     }
@@ -60,8 +66,9 @@ public class Menu : MonoBehaviour
         audioPlayer.clip = menuSounds[0];
         audioPlayer.Play();
         m_Animator.SetBool("isStarted", true);
+        coinObj100.SetActive(true);
         Invoke("PlayTimeline", 2f);
-        Invoke("SpawnFunc",2f);
+        Invoke("SpawnFunc",3f);
         PlayerPrefs.SetInt(difficultyKey, 3);
         speed.m_Speed = 1f;
     }
@@ -86,6 +93,7 @@ public class Menu : MonoBehaviour
         Instantiate(G_ObjectManager, new Vector3(0, 0, 0), Quaternion.identity);
         Destroy(M_CamObject);
         Destroy(M_Canvas);
+        Destroy(M_BG);
     }
 
      private void PlayTimeline()
