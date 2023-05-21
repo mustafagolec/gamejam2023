@@ -15,35 +15,39 @@ public class Player : MonoBehaviour
     public Slider healthSlider;
     public int steerValue;
     //public Animator P_Anim;
-    
+
 
     //sigara kodu
-    private bool isSmoking = false;     
+    private bool isSmoking = false;
     private float smokingDuration = 1.5f;//Sigara etkisinin ne kadar s�rece�ini belirle
     private float healthDecreaseInterval = 1f;//Sa�l�k azalmas�n�n hangi aral�klarla ger�ekle�ece�ini belirler
     private float healthDecreaseTimer = 0f;//Sa�l�k azalmas�n�n s�resini takip eden bir saya�t�r                                       
     public AudioSource audioPlayer;
-    public AudioClip[] soundsEffect;     
+    public AudioClip[] soundsEffect;
     public ParticleSystem smokeParticle;
     ParticleSystem temp;
+    Animator m_Animator;
 
 
     private void Start()
     {
-        if(PlayerPrefs.GetInt(difficultyKey) == 1){ //BAŞLANGIÇ SEÇENEKLERİ
+        if (PlayerPrefs.GetInt(difficultyKey) == 1)
+        { //BAŞLANGIÇ SEÇENEKLERİ
             health = 3;
         }
-        else if(PlayerPrefs.GetInt(difficultyKey) == 2){
+        else if (PlayerPrefs.GetInt(difficultyKey) == 2)
+        {
             health = 4;
         }
-        else if(PlayerPrefs.GetInt(difficultyKey) == 3){
+        else if (PlayerPrefs.GetInt(difficultyKey) == 3)
+        {
             health = 5;
         }
         healthSlider = GameObject.FindGameObjectWithTag("Canvas_InGame").transform.GetChild(2).GetComponent<Slider>();
         healthSlider.maxValue = health;
         scoreSc = GetComponent<Score>();
-       // P_Anim= GetComponent<Animator>();
-        
+        m_Animator = GetComponent<Animator>();
+
     }
 
     public void Update()
@@ -51,7 +55,6 @@ public class Player : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime); //ilerleme kodu
         transform.Translate((steerValue / 20f) * turnSpeed * Time.deltaTime, 0f, 0f); //saga sola otele
         healthUpdate();
-        // P_Anim.Play("Walk");
 
         if (isSmoking)
         {
@@ -60,7 +63,7 @@ public class Player : MonoBehaviour
             if (healthDecreaseTimer >= healthDecreaseInterval)
             {
                 healthDecreaseTimer = 0f;
-                health --;
+                health--;
                 Debug.Log("saglik:" + health);
             }
         }
@@ -96,7 +99,7 @@ public class Player : MonoBehaviour
         {
             audioPlayer.clip = soundsEffect[0];
             audioPlayer.Play();
-            health=0;
+            health = 0;
         }
 
         if (other.CompareTag("Coin"))
@@ -137,6 +140,18 @@ public class Player : MonoBehaviour
         {
             health = 0;
         }
+
+        if (health > 1)
+        {
+            m_Animator.SetBool("isRunning", true);
+            m_Animator.SetBool("isWalking", false);
+        }
+        else if (health == 1)
+        {
+            m_Animator.SetBool("isWalking", true);
+            m_Animator.SetBool("isRunning", false);
+        }
+        
         HealthSlider(health);
     }
 
