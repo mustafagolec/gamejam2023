@@ -11,6 +11,8 @@ TagManager:
   - Obstacle_Cigarette
   - Coin
   - Canvas_InGame
+  - FxTemporaire
+  - Gameover_menu
   layers:
   - Default
   - TransparentFX

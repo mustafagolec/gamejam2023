@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectPrefabs:
   - {fileID: 6781326995042959632, guid: 9f6122801ceb4004e99336ea453e6bdb, type: 3}
+  - {fileID: 5515238910239635770, guid: 7dbb0a440d9ea0c4882c3ea55baffa79, type: 3}
   ObjectZ: 250
   StartTime: 0
   SpawnTime: 1

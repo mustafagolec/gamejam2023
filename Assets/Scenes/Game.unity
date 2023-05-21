@@ -158,6 +158,14 @@ PrefabInstance:
       propertyPath: M_CamObject
       value: 
       objectReference: {fileID: 1389675599}
+    - target: {fileID: 52815049, guid: 2fe10c13f1ed55040b4e50360ada6ad2, type: 3}
+      propertyPath: mainmenuObj
+      value: 
+      objectReference: {fileID: 1427399875}
+    - target: {fileID: 52815049, guid: 2fe10c13f1ed55040b4e50360ada6ad2, type: 3}
+      propertyPath: shoppingmenuObj
+      value: 
+      objectReference: {fileID: 1858881642}
     - target: {fileID: 1007102079, guid: 2fe10c13f1ed55040b4e50360ada6ad2, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1779,6 +1787,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac4dbd904122ad4f9593d7f740fe22f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1427399875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3626318630748499982, guid: 2fe10c13f1ed55040b4e50360ada6ad2,
+    type: 3}
+  m_PrefabInstance: {fileID: 52815047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1794486890
 GameObject:
   m_ObjectHideFlags: 3
@@ -1880,6 +1894,12 @@ MonoBehaviour:
     m_PositionOffset: 0
     m_SearchRadius: 2
     m_SearchResolution: 5
+--- !u!1 &1858881642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1007102079, guid: 2fe10c13f1ed55040b4e50360ada6ad2,
+    type: 3}
+  m_PrefabInstance: {fileID: 52815047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2133470500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 234536192441360626, guid: f53e4d11f1af1a04dabe1b952072e7d2,

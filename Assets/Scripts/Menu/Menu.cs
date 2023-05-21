@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Timeline;
 using TMPro;
+using UnityEngine.UI;
 public class Menu : MonoBehaviour
 {
     public const string difficultyKey = "difficulty"; //1,2,3   //PlayerPrefs.GetInt(difficultyKey) == 1, PlayerPrefs.SetInt(difficultyKey, 0);
     public const string coinKey = "coinKey";
+    public const string moneyKey = "MoneyKey";
+    private int totalmoney;
     public const string playerSkin = "SkinKey"; //1,2,3,4,5,6
     public GameObject gumMachine;
     public GameObject coinObj25;
@@ -30,6 +33,7 @@ public class Menu : MonoBehaviour
     public TimelineAsset timelineAsset;
     public CinemachineDollyCart speed;
     public TMP_Text coinText;
+    public TMP_Text moneyText;
     public AudioSource audioPlayer;
     public AudioClip[] menuSounds;
     private int totalcoin;
@@ -46,6 +50,8 @@ public class Menu : MonoBehaviour
     public const string BlueSkin = "BlueSkinKey";
     public const string GreenSkin = "GreenSkinKey";
     public const string GoldSkin = "GoldSkinKey";
+    public Button buttonObject1;
+    public Button buttonObject2;
 
     private void Start()
     {
@@ -59,6 +65,8 @@ public class Menu : MonoBehaviour
     {
         coinText.text = $"Coin : {totalcoin}";
         PlayerPrefs.SetInt(coinKey, totalcoin);
+        totalmoney = PlayerPrefs.GetInt(moneyKey);
+        moneyText.text = $"Paranız : {totalmoney} Kr";
         if (PlayerPrefs.GetInt(WhiteSkin) == 1)
         {
             isWhiteUnlocked = true;
@@ -88,6 +96,14 @@ public class Menu : MonoBehaviour
             isGoldUnlocked = true;
             colorTexts[4].SetActive(false);
         }
+
+        if(totalmoney < 50){
+            buttonObject1.interactable = false;
+            buttonObject2.interactable = false;
+        }
+        else if(totalmoney < 100){
+            buttonObject2.interactable = false;
+        }
     }
 
     public void buttonOne()
@@ -101,6 +117,8 @@ public class Menu : MonoBehaviour
         Invoke("SpawnFunc", 2.7f);
         PlayerPrefs.SetInt(difficultyKey, 1);
         speed.m_Speed = 1f;
+        totalmoney-=25;
+        PlayerPrefs.SetInt(moneyKey,totalmoney);
     }
 
     public void buttonTwo()
@@ -114,6 +132,8 @@ public class Menu : MonoBehaviour
         Invoke("SpawnFunc", 2.7f);
         PlayerPrefs.SetInt(difficultyKey, 2);
         speed.m_Speed = 1f;
+        totalmoney-=50;
+        PlayerPrefs.SetInt(moneyKey,totalmoney);
     }
 
     public void buttonThree()
@@ -127,6 +147,8 @@ public class Menu : MonoBehaviour
         Invoke("SpawnFunc", 2.7f);
         PlayerPrefs.SetInt(difficultyKey, 3);
         speed.m_Speed = 1f;
+        totalmoney-=100;
+        PlayerPrefs.SetInt(moneyKey,totalmoney);
     }
 
 
