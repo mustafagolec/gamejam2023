@@ -162,12 +162,18 @@ public class Player : MonoBehaviour
         temp.transform.position = transform.position;
         temp.transform.parent = transform;
         temp.Play();
-        
+
         Invoke(nameof(StopSmoking), 1.5f);
+        Invoke(nameof(SmokeSoundStop), 3f);
     }
     private void StopSmoking()
     {
         isSmoking = false;
         temp.Stop();
+    }
+
+    private void SmokeSoundStop()
+    {
+        cigaratte.Stop();
     }
 }

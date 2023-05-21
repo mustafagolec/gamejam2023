@@ -42,9 +42,10 @@ public class Menu : MonoBehaviour
         audioPlayer.clip = menuSounds[0];
         audioPlayer.Play();
         m_Animator.SetBool("isStarted", true);
+        M_Canvas.SetActive(false);
         coinObj25.SetActive(true);
         Invoke("PlayTimeline", 2f);
-        Invoke("SpawnFunc",3f);
+        Invoke("SpawnFunc",2.7f);
         PlayerPrefs.SetInt(difficultyKey, 1);
         speed.m_Speed = 1f;
     }
@@ -54,9 +55,10 @@ public class Menu : MonoBehaviour
         audioPlayer.clip = menuSounds[0];
         audioPlayer.Play();
         m_Animator.SetBool("isStarted", true);
+        M_Canvas.SetActive(false);
         coinObj50.SetActive(true);
         Invoke("PlayTimeline", 2f);
-        Invoke("SpawnFunc",3f);
+        Invoke("SpawnFunc",2.7f);
         PlayerPrefs.SetInt(difficultyKey, 2);
         speed.m_Speed = 1f;
     }
@@ -66,9 +68,10 @@ public class Menu : MonoBehaviour
         audioPlayer.clip = menuSounds[0];
         audioPlayer.Play();
         m_Animator.SetBool("isStarted", true);
+        M_Canvas.SetActive(false);
         coinObj100.SetActive(true);
         Invoke("PlayTimeline", 2f);
-        Invoke("SpawnFunc",3f);
+        Invoke("SpawnFunc",2.7f);
         PlayerPrefs.SetInt(difficultyKey, 3);
         speed.m_Speed = 1f;
     }
