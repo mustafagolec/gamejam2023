@@ -35,7 +35,6 @@ public class Menu : MonoBehaviour
     public TMP_Text coinText;
     public TMP_Text moneyText;
     public AudioSource audioPlayer;
-    public AudioClip[] menuSounds;
     private int totalcoin;
 
 
@@ -58,7 +57,7 @@ public class Menu : MonoBehaviour
         m_Animator = gumMachine.GetComponent<Animator>();
         c_VirtualCamera = M_CamObject.GetComponent<Cinemachine.CinemachineVirtualCamera>();
         totalcoin = PlayerPrefs.GetInt(coinKey);
-
+        totalmoney = PlayerPrefs.GetInt(moneyKey);
     }
 
     private void Update()
@@ -66,11 +65,8 @@ public class Menu : MonoBehaviour
         coinText.text = $"Coin : {totalcoin}";
         PlayerPrefs.SetInt(coinKey, totalcoin);
         totalmoney = PlayerPrefs.GetInt(moneyKey);
-        if(totalmoney < 0){
-            totalmoney = 0;
-        }
         moneyText.text = $"Paranız : {totalmoney} Kr";
-        
+
         if (PlayerPrefs.GetInt(WhiteSkin) == 1)
         {
             isWhiteUnlocked = true;
@@ -101,18 +97,19 @@ public class Menu : MonoBehaviour
             colorTexts[4].SetActive(false);
         }
 
-        if(totalmoney < 50){
+        if (totalmoney < 50)
+        {
             buttonObject1.interactable = false;
             buttonObject2.interactable = false;
         }
-        else if(totalmoney < 100){
+        else if (totalmoney < 100)
+        {
             buttonObject2.interactable = false;
         }
     }
 
     public void buttonOne()
     {
-        audioPlayer.clip = menuSounds[0];
         audioPlayer.Play();
         m_Animator.SetBool("isStarted", true);
         M_Canvas.SetActive(false);
@@ -121,13 +118,12 @@ public class Menu : MonoBehaviour
         Invoke("SpawnFunc", 2.7f);
         PlayerPrefs.SetInt(difficultyKey, 1);
         speed.m_Speed = 1f;
-        totalmoney-=25;
-        PlayerPrefs.SetInt(moneyKey,totalmoney);
+        totalmoney -= 25;
+        PlayerPrefs.SetInt(moneyKey, totalmoney);
     }
 
     public void buttonTwo()
     {
-        audioPlayer.clip = menuSounds[0];
         audioPlayer.Play();
         m_Animator.SetBool("isStarted", true);
         M_Canvas.SetActive(false);
@@ -136,13 +132,12 @@ public class Menu : MonoBehaviour
         Invoke("SpawnFunc", 2.7f);
         PlayerPrefs.SetInt(difficultyKey, 2);
         speed.m_Speed = 1f;
-        totalmoney-=50;
-        PlayerPrefs.SetInt(moneyKey,totalmoney);
+        totalmoney -= 50;
+        PlayerPrefs.SetInt(moneyKey, totalmoney);
     }
 
     public void buttonThree()
     {
-        audioPlayer.clip = menuSounds[0];
         audioPlayer.Play();
         m_Animator.SetBool("isStarted", true);
         M_Canvas.SetActive(false);
@@ -151,8 +146,8 @@ public class Menu : MonoBehaviour
         Invoke("SpawnFunc", 2.7f);
         PlayerPrefs.SetInt(difficultyKey, 3);
         speed.m_Speed = 1f;
-        totalmoney-=100;
-        PlayerPrefs.SetInt(moneyKey,totalmoney);
+        totalmoney -= 100;
+        PlayerPrefs.SetInt(moneyKey, totalmoney);
     }
 
 
