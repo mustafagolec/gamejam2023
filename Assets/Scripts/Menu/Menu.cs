@@ -65,7 +65,7 @@ public class Menu : MonoBehaviour
         Instantiate(G_UI, new Vector3(0, 0, 0), Quaternion.identity);
         Instantiate(G_TileManager, new Vector3(0, 0, 0), Quaternion.identity);
         Instantiate(G_ObjectManager, new Vector3(0, 0, 0), Quaternion.identity);
-        //Destroy(M_CamObject);
+        Destroy(M_CamObject);
         Destroy(M_Canvas);
     }
 

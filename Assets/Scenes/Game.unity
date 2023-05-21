@@ -141,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 52815049, guid: 2fe10c13f1ed55040b4e50360ada6ad2, type: 3}
       propertyPath: M_CamObject
       value: 
-      objectReference: {fileID: 1234819148}
+      objectReference: {fileID: 1389675599}
     - target: {fileID: 52815049, guid: 2fe10c13f1ed55040b4e50360ada6ad2, type: 3}
       propertyPath: timelineAsset
       value: 
@@ -1096,7 +1096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1234819149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,6 +1161,10 @@ PrefabInstance:
     - target: {fileID: 139462, guid: 2055b8935901bfe4fa95ca748b00264d, type: 3}
       propertyPath: m_Name
       value: Fire_Complex_Soul_BigFire
+      objectReference: {fileID: 0}
+    - target: {fileID: 139462, guid: 2055b8935901bfe4fa95ca748b00264d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 457486, guid: 2055b8935901bfe4fa95ca748b00264d, type: 3}
       propertyPath: m_RootOrder

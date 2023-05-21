@@ -18,9 +18,9 @@ public class Player : MonoBehaviour
 
     //sigara kodu
     private bool isSmoking = false;     
-    private float smokingDuration = 2f;//Sigara etkisinin ne kadar süreceðini belirle
-    private float healthDecreaseInterval = 1f;//Saðlýk azalmasýnýn hangi aralýklarla gerçekleþeceðini belirler
-    private float healthDecreaseTimer = 0f;//Saðlýk azalmasýnýn süresini takip eden bir sayaçtýr                                       
+    private float smokingDuration = 1.5f;//Sigara etkisinin ne kadar sï¿½receï¿½ini belirle
+    private float healthDecreaseInterval = 1f;//Saï¿½lï¿½k azalmasï¿½nï¿½n hangi aralï¿½klarla gerï¿½ekleï¿½eceï¿½ini belirler
+    private float healthDecreaseTimer = 0f;//Saï¿½lï¿½k azalmasï¿½nï¿½n sï¿½resini takip eden bir sayaï¿½tï¿½r                                       
     
     public ParticleSystem smokeParticle;
     ParticleSystem temp;
@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Obstacle_Cigarette"))
         {
             Destroy(other.gameObject);
-            health -= 2;
+            health -= 1;
             Debug.Log("saglik:" + health);
             isSmoking = true;
             StartSmoking();
@@ -131,13 +131,13 @@ public class Player : MonoBehaviour
         temp.transform.parent=transform;
         temp.Play();
         Invoke(nameof(StopSmoking), smokingDuration);
-        Debug.Log("Partikül efekti baþladý.");
+        Debug.Log("Partikï¿½l efekti baï¿½ladï¿½.");
 
     }
     private void StopSmoking()
     {
         isSmoking = false;
         temp.Stop();
-        Debug.Log("Partikül efekti durduruldu.");
+        Debug.Log("Partikï¿½l efekti durduruldu.");
     }
 }
