@@ -66,7 +66,11 @@ public class Menu : MonoBehaviour
         coinText.text = $"Coin : {totalcoin}";
         PlayerPrefs.SetInt(coinKey, totalcoin);
         totalmoney = PlayerPrefs.GetInt(moneyKey);
+        if(totalmoney < 0){
+            totalmoney = 0;
+        }
         moneyText.text = $"Paranız : {totalmoney} Kr";
+        
         if (PlayerPrefs.GetInt(WhiteSkin) == 1)
         {
             isWhiteUnlocked = true;
