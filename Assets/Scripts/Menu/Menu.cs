@@ -1,7 +1,8 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Timeline;
 public class Menu : MonoBehaviour
 {
     public GameObject gumMachine;
@@ -17,6 +18,8 @@ public class Menu : MonoBehaviour
 
     public GameObject mainmenuObj;
     public GameObject shoppingmenuObj;
+    public TimelineAsset timelineAsset;
+    public CinemachineDollyCart speed;
 
     private void Start()
     {
@@ -26,7 +29,10 @@ public class Menu : MonoBehaviour
     public void buttonOne()
     {
         m_Animator.SetBool("isStarted", true);
+        Invoke("PlayTimeline", 2f);
         Invoke("SpawnFunc",2f);
+        speed.m_Speed = 1f;
+
     }
 
     public void buttonTwo()
@@ -62,4 +68,14 @@ public class Menu : MonoBehaviour
         //Destroy(M_CamObject);
         Destroy(M_Canvas);
     }
+
+     private void PlayTimeline()
+      {
+          // Timeline'ı başlat
+          if (timelineAsset != null)
+          {
+              TimelineController timelineController = gameObject.AddComponent<TimelineController>();
+              timelineController.Initialize(timelineAsset);
+          }
+      }
 }
