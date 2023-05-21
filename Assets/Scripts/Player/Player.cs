@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public const string difficultyKey = "difficulty"; //1,2,3   //PlayerPrefs.GetInt(difficultyKey) == 1
+    public const string difficultyKey = "difficulty";
+    public const string playerSkin = "SkinKey";
     private Score scoreSc;
     [SerializeField] public float speed = 10f;
     [SerializeField] private float turnSpeed = 150f;
@@ -31,6 +32,8 @@ public class Player : MonoBehaviour
     ParticleSystem temp;
     Animator m_Animator;
 
+    public GameObject defaultGumGo;
+
 
     private void Start()
     {
@@ -50,6 +53,7 @@ public class Player : MonoBehaviour
         healthSlider.maxValue = health;
         scoreSc = GetComponent<Score>();
         m_Animator = GetComponent<Animator>();
+        ColorChecker();
 
     }
 
@@ -175,5 +179,29 @@ public class Player : MonoBehaviour
     private void SmokeSoundStop()
     {
         cigaratte.Stop();
+    }
+
+    private void ColorChecker()
+    {
+        if (PlayerPrefs.GetInt(playerSkin) == 2)
+        {
+            defaultGumGo.GetComponent<MeshRenderer>().material.color = Color.white;
+        }
+        else if (PlayerPrefs.GetInt(playerSkin) == 3)
+        {
+            defaultGumGo.GetComponent<MeshRenderer>().material.color = Color.red;
+        }
+        else if (PlayerPrefs.GetInt(playerSkin) == 4)
+        {
+            defaultGumGo.GetComponent<MeshRenderer>().material.color = Color.blue;
+        }
+        else if (PlayerPrefs.GetInt(playerSkin) == 5)
+        {
+            defaultGumGo.GetComponent<MeshRenderer>().material.color = Color.green;
+        }
+        else if (PlayerPrefs.GetInt(playerSkin) == 6)
+        {
+            defaultGumGo.GetComponent<MeshRenderer>().material.color = Color.yellow;
+        }
     }
 }

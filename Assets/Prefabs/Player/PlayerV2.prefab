@@ -387,6 +387,7 @@ MonoBehaviour:
   water: {fileID: 7532591055617658344}
   coin: {fileID: 7665761038424137105}
   smokeParticle: {fileID: 19812248, guid: beb394936b9715549b3743727aa96c75, type: 3}
+  defaultGumGo: {fileID: 6400822347076965119}
 --- !u!114 &919132149332575953
 MonoBehaviour:
   m_ObjectHideFlags: 0
