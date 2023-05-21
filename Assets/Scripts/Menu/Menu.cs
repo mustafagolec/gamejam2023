@@ -15,6 +15,7 @@ public class Menu : MonoBehaviour
     Animator m_Animator;
 
     public GameObject M_CamObject;
+    Cinemachine.CinemachineVirtualCamera c_VirtualCamera;
     public GameObject M_Canvas;
     public GameObject M_BG;
 
@@ -34,6 +35,7 @@ public class Menu : MonoBehaviour
     private void Start()
     {
         m_Animator = gumMachine.GetComponent<Animator>();
+        c_VirtualCamera = M_CamObject.GetComponent<Cinemachine.CinemachineVirtualCamera>();
         coinText.text = $"Coin : {PlayerPrefs.GetInt(coinKey)}";
     }
 
@@ -94,9 +96,11 @@ public class Menu : MonoBehaviour
         Instantiate(G_UI, new Vector3(0, 0, 0), Quaternion.identity);
         Instantiate(G_TileManager, new Vector3(0, 0, 0), Quaternion.identity);
         Instantiate(G_ObjectManager, new Vector3(0, 0, 0), Quaternion.identity);
-        Destroy(M_CamObject);
+        c_VirtualCamera.m_LookAt = G_Player.transform;
+        c_VirtualCamera.m_Follow = G_Player.transform;
         Destroy(M_Canvas);
         Destroy(M_BG);
+        Destroy(M_CamObject,5f);
     }
 
      private void PlayTimeline()

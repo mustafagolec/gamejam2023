@@ -2527,8 +2527,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gumMachine: {fileID: 0}
+  coinObj25: {fileID: 0}
+  coinObj50: {fileID: 0}
+  coinObj100: {fileID: 0}
   M_CamObject: {fileID: 0}
   M_Canvas: {fileID: 9015386307328595279}
+  M_BG: {fileID: 0}
   G_Player: {fileID: 2691325062979840550, guid: e66bd08b49adb00459a71072cd8e36c5,
     type: 3}
   G_UI: {fileID: 3700799847018280165, guid: 897c7f3cfaee5494488c72103f768d45, type: 3}
@@ -2554,8 +2558,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 1f726a6c12efa3440b208f5f19ad2a9d, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
