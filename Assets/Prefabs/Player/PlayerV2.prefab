@@ -83,7 +83,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148679547}
-  m_LocalRotation: {x: 0.3115705, y: 1e-45, z: -0, w: 0.9502231}
+  m_LocalRotation: {x: 0.3115705, y: -3e-45, z: 1e-45, w: 0.9502231}
   m_LocalPosition: {x: 0, y: 8.45, z: -7.6000004}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
@@ -381,7 +381,7 @@ MonoBehaviour:
   audioPlayer: {fileID: 1452731347111800825}
   soundsEffect:
   - {fileID: 8300000, guid: efbc12e0a2a8ae041b62978f6f0dcaaf, type: 3}
-  - {fileID: 8300000, guid: ad75160fe7cf0ca4392192f417296700, type: 3}
+  - {fileID: 8300000, guid: b02777f5093f5c84fa5a05f5d7eb4c63, type: 3}
   - {fileID: 8300000, guid: 9f3e2159822499f409f7375810ad620f, type: 3}
   - {fileID: 8300000, guid: e37f784b1ad3e914a9ca0df8db767773, type: 3}
   smokeParticle: {fileID: 19812248, guid: beb394936b9715549b3743727aa96c75, type: 3}
@@ -616,6 +616,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2613642369911089530, guid: f99db39f42f9c5a43ad8c8fffb954a53,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613642369911089530, guid: f99db39f42f9c5a43ad8c8fffb954a53,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613642369911089530, guid: f99db39f42f9c5a43ad8c8fffb954a53,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613642369911089530, guid: f99db39f42f9c5a43ad8c8fffb954a53,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.64
       objectReference: {fileID: 0}
@@ -693,6 +708,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 691510036357539892, guid: 47a3106ec1ffaf24a9cf27962a0baa9d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 691510036357539892, guid: 47a3106ec1ffaf24a9cf27962a0baa9d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 691510036357539892, guid: 47a3106ec1ffaf24a9cf27962a0baa9d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 691510036357539892, guid: 47a3106ec1ffaf24a9cf27962a0baa9d,
         type: 3}

@@ -85,8 +85,6 @@ public class Player : MonoBehaviour
 
         if (other.CompareTag("Obstacle_Cigarette"))
         {
-            audioPlayer.clip = soundsEffect[1];
-            audioPlayer.Play();
             Destroy(other.gameObject);
             health -= 1;
             Debug.Log("saglik:" + health);
@@ -151,7 +149,7 @@ public class Player : MonoBehaviour
             m_Animator.SetBool("isWalking", true);
             m_Animator.SetBool("isRunning", false);
         }
-        
+
         HealthSlider(health);
     }
 
@@ -163,11 +161,14 @@ public class Player : MonoBehaviour
         temp.transform.position = transform.position;
         temp.transform.parent = transform;
         temp.Play();
-        Invoke(nameof(StopSmoking), smokingDuration);
+        audioPlayer.clip = soundsEffect[1];
+        audioPlayer.Play();
+        Invoke(nameof(StopSmoking), 1.5f);
     }
     private void StopSmoking()
     {
         isSmoking = false;
         temp.Stop();
+        audioPlayer.Stop();
     }
 }
