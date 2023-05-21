@@ -382,8 +382,8 @@ MonoBehaviour:
   soundsEffect:
   - {fileID: 8300000, guid: efbc12e0a2a8ae041b62978f6f0dcaaf, type: 3}
   - {fileID: 8300000, guid: ad75160fe7cf0ca4392192f417296700, type: 3}
-  - {fileID: 8300000, guid: 0143062114480c340969eae32ed1d285, type: 3}
-  - {fileID: 8300000, guid: 88b1c9bbb1994fa488db26042f299a08, type: 3}
+  - {fileID: 8300000, guid: 9f3e2159822499f409f7375810ad620f, type: 3}
+  - {fileID: 8300000, guid: e37f784b1ad3e914a9ca0df8db767773, type: 3}
   smokeParticle: {fileID: 19812248, guid: beb394936b9715549b3743727aa96c75, type: 3}
 --- !u!114 &919132149332575953
 MonoBehaviour:

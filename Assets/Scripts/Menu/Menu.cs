@@ -24,6 +24,8 @@ public class Menu : MonoBehaviour
     public TimelineAsset timelineAsset;
     public CinemachineDollyCart speed;
     public TMP_Text coinText;
+    public AudioSource audioPlayer;
+    public AudioClip[] menuSounds;
 
     private void Start()
     {
@@ -33,6 +35,8 @@ public class Menu : MonoBehaviour
 
     public void buttonOne()
     {
+        audioPlayer.clip = menuSounds[0];
+        audioPlayer.Play();
         m_Animator.SetBool("isStarted", true);
         Invoke("PlayTimeline", 2f);
         Invoke("SpawnFunc",2f);
@@ -42,6 +46,8 @@ public class Menu : MonoBehaviour
 
     public void buttonTwo()
     {
+        audioPlayer.clip = menuSounds[0];
+        audioPlayer.Play();
         m_Animator.SetBool("isStarted", true);
         Invoke("PlayTimeline", 2f);
         Invoke("SpawnFunc",2f);
@@ -51,6 +57,8 @@ public class Menu : MonoBehaviour
 
     public void buttonThree()
     {
+        audioPlayer.clip = menuSounds[0];
+        audioPlayer.Play();
         m_Animator.SetBool("isStarted", true);
         Invoke("PlayTimeline", 2f);
         Invoke("SpawnFunc",2f);
