@@ -21,7 +21,8 @@ public class Player : MonoBehaviour
     private float smokingDuration = 1.5f;//Sigara etkisinin ne kadar s�rece�ini belirle
     private float healthDecreaseInterval = 1f;//Sa�l�k azalmas�n�n hangi aral�klarla ger�ekle�ece�ini belirler
     private float healthDecreaseTimer = 0f;//Sa�l�k azalmas�n�n s�resini takip eden bir saya�t�r                                       
-    
+    public AudioSource audioPlayer;
+    public AudioClip[] soundsEffect;     
     public ParticleSystem smokeParticle;
     ParticleSystem temp;
 
@@ -71,6 +72,8 @@ public class Player : MonoBehaviour
 
         if (other.CompareTag("Obstacle_Cigarette"))
         {
+            audioPlayer.clip = soundsEffect[1];
+            audioPlayer.Play();
             Destroy(other.gameObject);
             health -= 1;
             Debug.Log("saglik:" + health);
@@ -81,17 +84,23 @@ public class Player : MonoBehaviour
 
         if (other.CompareTag("Obstacle_Map"))
         {
+            audioPlayer.clip = soundsEffect[0];
+            audioPlayer.Play();
             health=0;
         }
 
         if (other.CompareTag("Coin"))
         {
+            audioPlayer.clip = soundsEffect[3];
+            audioPlayer.Play();
             scoreSc.coin++;
             Destroy(other.gameObject);
         }
 
         if (other.CompareTag("PU_Health"))
         {
+            audioPlayer.clip = soundsEffect[2];
+            audioPlayer.Play();
             health++;
             if (health >= maxHealth)
             {
