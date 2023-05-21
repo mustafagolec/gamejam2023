@@ -27,6 +27,9 @@ public class Player : MonoBehaviour
     public AudioSource cigaratte;
     public AudioSource water;
     public AudioSource coin;
+    public AudioSource walk;
+    public AudioSource run;
+
 
     public ParticleSystem smokeParticle;
     ParticleSystem temp;
